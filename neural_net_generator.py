@@ -1,7 +1,6 @@
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
-import seaborn as sns
 from sklearn.model_selection import train_test_split
 from sklearn import preprocessing
 from tensorflow.keras.models import Sequential
@@ -10,7 +9,9 @@ from tensorflow.keras.losses import BinaryCrossentropy
 from sklearn.metrics import classification_report
 from tensorflow.keras import regularizers
 
-df = pd.read_csv('heart_disease.csv')
+df = pd.read_csv('rawdata\heart_disease.csv')
+
+input("ready?")
 
 df['typical_angina_pain'] = df['cp'].replace([0, 1, 2, 3], [0, 1, 0, 0])
 df['atypical_angina_pain'] = df['cp'].replace([0, 1, 2, 3], [0, 0, 1, 0])
