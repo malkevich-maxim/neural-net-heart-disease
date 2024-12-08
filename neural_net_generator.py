@@ -10,10 +10,7 @@ from tensorflow.keras.losses import BinaryCrossentropy
 from sklearn.metrics import classification_report
 from tensorflow.keras import regularizers
 
-from google.colab import drive
-drive.mount('/content/drive')
-
-df = pd.read_csv('/content/drive/MyDrive/heart_disease.csv')
+df = pd.read_csv('heart_disease.csv')
 
 df['typical_angina_pain'] = df['cp'].replace([0, 1, 2, 3], [0, 1, 0, 0])
 df['atypical_angina_pain'] = df['cp'].replace([0, 1, 2, 3], [0, 0, 1, 0])
